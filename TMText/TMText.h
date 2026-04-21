@@ -1,9 +1,10 @@
 #pragma once
+#pragma warning(disable : 5045 4711 4710)
+
 #include <string>
 #include <regex>
 #include <vector>
 
-#pragma warning(disable : 5045 4711 4710)
 
 #define TrackmaniaText_IsHexadecimal(Char) ((Char) >= '0' and (Char) <= '9') or ((Char) >= 'a' and (Char) <= 'f') or ((Char) >= 'A' and (Char) <= 'F')
 

@@ -1,3 +1,4 @@
+#pragma warning(disable : 5045 4711 4710)
 #pragma warning(disable : 4711 4710)
 
 #include <iostream>

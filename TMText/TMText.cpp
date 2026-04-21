@@ -27,7 +27,9 @@ namespace TrackmaniaText
 
 		this->Code = FormatSpec;
 		this->Idx = Idx;
+#ifdef _M_X64
 		this->Pad = 0;
+#endif
 	}
 
 	FormatSpecifier::operator std::string()
