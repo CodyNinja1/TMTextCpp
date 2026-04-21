@@ -12,7 +12,8 @@ int main()
         std::cout << Spec.Code << ": " << Spec.Type << " (at " << Spec.Idx << ")" << "\n";
     }
 
-    std::cout << Specs.OriginalText << "\n";
+    std::cout << Specs.OriginalText << "\n\n";
+
     for (auto& Spec : Specs)
     {
         for (size_t Wait = 0; Wait < Spec.Idx == 0 ? 0 : Spec.Idx - 1; Wait++)
@@ -28,6 +29,7 @@ $i: 105 (at 0)
 $fff: 1 (at 7)
 $000: 1 (at 14)
 $u: 0 (at 46)
+
 Hello! White. Give me some $$$. Also, this is unsupported!
 ^
        ^
