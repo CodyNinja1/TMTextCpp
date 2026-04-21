@@ -9,7 +9,7 @@ int main()
 
     for (auto& Spec : Specs)
     {
-        std::cout << (std::string)Spec << ": " << Spec.Type << " (at " << Spec.Idx << ")" << "\n";
+        std::cout << Spec.Code << ": " << Spec.Type << " (at " << Spec.Idx << ")" << "\n";
     }
 
     std::cout << Specs.OriginalText << "\n";
