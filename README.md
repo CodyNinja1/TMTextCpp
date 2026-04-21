@@ -34,3 +34,5 @@ Hello! White. Give me some $$$. Also, this is unsupported!
               ^
                                               ^
 ```
+## Limits
+It does not support `$l` or `$p` properly.
