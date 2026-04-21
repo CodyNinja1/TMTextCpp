@@ -13,4 +13,12 @@ int main()
     }
 
     std::cout << Specs.OriginalText << "\n";
+    for (auto& Spec : Specs)
+    {
+        for (size_t Wait = 0; Wait < Spec.Idx == 0 ? 0 : Spec.Idx - 1; Wait++)
+        {
+            std::cout << " ";
+        }
+        std::cout << "^\n";
+    }
 }

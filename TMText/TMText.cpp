@@ -58,6 +58,8 @@ namespace TrackmaniaText
 
 		std::string Temp = "";
 
+		size_t DoubleDollarSignsEncountered = 0;
+
 		for (size_t CharIdx = 0; CharIdx < Str.length(); CharIdx++)
 		{
 			char Char = Str[CharIdx];
@@ -68,7 +70,7 @@ namespace TrackmaniaText
 			{
 				if (not Temp.empty())
 				{ 
-					Founds.push_back(Temp, CharIdx - Temp.length());
+					Founds.push_back(Temp, CharIdx - Temp.length() - DoubleDollarSignsEncountered);
 					Temp = "";
 				}
 				CharsToGo = 1;
@@ -80,6 +82,8 @@ namespace TrackmaniaText
 				{
 					CharsToGo = 1;
 					Temp = "";
+
+					DoubleDollarSignsEncountered += 1;
 				}
 				else
 				{
