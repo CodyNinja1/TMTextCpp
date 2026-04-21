@@ -42,7 +42,6 @@ namespace TrackmaniaText
 		size_t Idx;
 
 		FormatSpecifier(std::string FormatSpec, size_t Idx = -1);
-		operator std::string();
 	};
 
 	struct TextSlice

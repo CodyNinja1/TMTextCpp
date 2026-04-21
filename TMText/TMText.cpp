@@ -32,11 +32,6 @@ namespace TrackmaniaText
 #endif
 	}
 
-	FormatSpecifier::operator std::string()
-	{
-		return this->Code;
-	}
-
 	void FormatSpecifierSearchResult::push_back(std::string FormatSpec, size_t Idx)
 	{
 		Specifiers.push_back(FormatSpecifier( FormatSpec, Idx ));
