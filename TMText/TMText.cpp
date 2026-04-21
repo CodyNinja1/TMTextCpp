@@ -6,7 +6,7 @@ namespace TrackmaniaText
 
 	constexpr char CharToLower(char Char)
 	{
-		return Char >= 'A' or Char <= 'Z' ? Char | 32 : Char;
+		return Char >= 'A' and Char <= 'Z' ? Char | 32 : Char;
 	}
 
 	FormatSpecifier::FormatSpecifier(std::string FormatSpec, size_t Idx)
