@@ -20,8 +20,13 @@ int main()
         {
             std::cout << " ";
         }
-        std::cout << "^\n";
+        std::cout << "^";
     }
+
+    // FillZero       => if any character is found to not be hex, the rest is filled with zeros,     so $fhello becomes equivilant to $f00hello
+    // InterpretAsHex => if any character is found to not be hex, it is assumed to be equal to zero, so $fhello becomes equivilant to $f0ello
+    auto SpecsEdgecase = TrackmaniaText::FindAllFormatSpecifiers("$fhello, world!", TrackmaniaText::ColorEdgecaseBehaviour_FillZero);
+    std::cout << "Edgecase: " << SpecsEdgecase.OriginalText << "\n\n";
 }
 ```
 ```
@@ -31,10 +36,9 @@ $000: 1 (at 14)
 $u: 0 (at 46)
 
 Hello! White. Give me some $$$. Also, this is unsupported!
-^
-       ^
-              ^
-                                              ^
+^      ^      ^                               ^
+
+Edgecase: hello, world!
 ```
 ## Limits
 It does not support `$l` or `$p` properly.
