@@ -23,6 +23,8 @@ int main()
         std::cout << "^";
     }
 
+    std::cout << "\n\n";
+
     // FillZero       => if any character is found to not be hex, the rest is filled with zeros,     so $fhello becomes equivilant to $f00hello
     // InterpretAsHex => if any character is found to not be hex, it is assumed to be equal to zero, so $fhello becomes equivilant to $f0ello
     auto SpecsEdgecase = TrackmaniaText::FindAllFormatSpecifiers("$fhello, world!", TrackmaniaText::ColorEdgecaseBehaviour_FillZero);
