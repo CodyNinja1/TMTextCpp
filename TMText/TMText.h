@@ -6,13 +6,13 @@
 #include <vector>
 
 
-#define TrackmaniaText_IsHexadecimal(Char) ((Char) >= '0' and (Char) <= '9') or ((Char) >= 'a' and (Char) <= 'f') or ((Char) >= 'A' and (Char) <= 'F')
+#define TrackmaniaText_IsHexadecimal(Char) (((Char) >= '0' && (Char) <= '9') || ((Char) >= 'a' && (Char) <= 'f') || ((Char) >= 'A' && (Char) <= 'F'))
 
 
 namespace TrackmaniaText
 {
 	extern std::string ValidTrackmaniaTextFormatSpecifierChars;
-	
+
 	constexpr char CharToLower(char);
 
 	enum FormatSpecifierType
@@ -30,6 +30,12 @@ namespace TrackmaniaText
 		FormatSpecifierType_ResetColor = 'g',
 		FormatSpecifierType_ResetAll = 'z',
 		FormatSpecifierType_PlayerManialink = 'p'
+	};
+
+	enum ColorEdgecaseBehaviour
+	{
+		ColorEdgecaseBehaviour_FillZero = 0,
+		ColorEdgecaseBehaviour_InterpretAsHex = 1
 	};
 
 	struct FormatSpecifier
@@ -64,6 +70,6 @@ namespace TrackmaniaText
 		std::vector<FormatSpecifier>::iterator end();
 	};
 
-	FormatSpecifierSearchResult FindAllFormatSpecifiers(std::string Str);
+	FormatSpecifierSearchResult FindAllFormatSpecifiers(std::string Str, ColorEdgecaseBehaviour ColorEdgecaseBehaviourType = ColorEdgecaseBehaviour_InterpretAsHex);
 }
 
